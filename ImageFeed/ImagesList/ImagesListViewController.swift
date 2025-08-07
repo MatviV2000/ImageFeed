@@ -1,5 +1,7 @@
 import UIKit
 
+//MARK: - Table Setup
+
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { }
     
@@ -50,8 +52,16 @@ extension ImagesListViewController {
     }
 }
 
+//MARK: - ImagesListViewController
+
 final class ImagesListViewController: UIViewController {
+    
+    //MARK: - Outlets
+    
     @IBOutlet private var tableView: UITableView!
+    
+    
+    //MARK: - Private Properties
     
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
@@ -61,6 +71,8 @@ final class ImagesListViewController: UIViewController {
         formatter.timeStyle = .none
         return formatter
     }()
+    
+    //MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
